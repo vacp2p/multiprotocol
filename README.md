@@ -42,7 +42,8 @@ code, size, name, comment
 
 ## Specification
 
-A multiprotocol, like a multiaddr is a recursive (TLV)+ (type-length-value repeating) encoding. It has two forms:
+A multiprotocol, like a multiaddr is a recursive (TLV)+ (type-length-value repeating) encoding, 
+except we add the addition of prefixes such as the `namespace`, `protocol` and `version`. It has two forms:
   - a human-readable version to be used when printing to the user (UTF-8)
   - a binary-packed version to be used in storage, transmissions on the wire, and as a primitive in other formats.
   
