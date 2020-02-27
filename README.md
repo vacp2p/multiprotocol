@@ -20,7 +20,7 @@ code, size, name, comment
 ```
 
 | field       | description                                                                                                                     |
-| ----------- | ------------------------------------------------------------------------------------------------------------------------------- |
+| :---------: | :------------------------------------------------------------------------------------------------------------------------------ |
 | **code**    | This field contains the code identifying the key.                                                                               |
 | **size**    | This field identifies the expected keys size, it can be any number or `V`, indicating that the value itself is length prefixed. |
 | **name**    | The human readable name of the field.                                                                                           |
