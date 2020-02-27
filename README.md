@@ -7,10 +7,10 @@ The protocol is inspired by other [multiformats](https://multiformats.io/), it p
 representations.
 
 The goal is to provide more granular identification for nodes beyond their connection information as provided by
-[multiaddr](https://github.com/multiformats/multiaddr).
+[multiaddr](https://github.com/multiformats/multiaddr). 
 
-Multiprotocol is generic in that any protocol can adapt the `code`s used for their own protocol. **A namespace is used
-to differentiate between protocols, this number should be arbitrary enough to not cause overlap**.
+Multiprotocol is generic in that any protocol can adapt the `code`s used for their own protocol.
+**A namespace is used to differentiate between protocols, this number should be arbitrary enough to not cause overlap**.
 
 <!--
 This repository contains the [multiprotocol definition](./multiprotocol.csv) used by [vac](https://vac.dev), 
