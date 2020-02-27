@@ -2,24 +2,26 @@
 
 @TODO MOVE TABLE TO VAC SPECIFIC REPO
 
-**:warning: THIS IS STILL AN EARLY DRAFT :warning:**
+This specification describes a simple method for nodes to describe the set of their capabilities.
+The protocol is inspired by other [multiformats](https://multiformats.io/), it provides both human and machine-readable
+representations.
 
-In this specification we describe a simple method for nodes to advertise their capabilities. 
-The protocol is heavily inspired by [multiformats](https://multiformats.io/) and provides both a human and machine readable representation.
+The goal is to provide more granular identification for nodes beyond their connection information as provided by
+[multiaddr](https://github.com/multiformats/multiaddr).
 
-The goal is to provide node identification beyond the [multiaddr](https://github.com/multiformats/multiaddr) 
-connection info which can be appended to the end of the address.
+Multiprotocol is generic in that any protocol can adapt the `code`s used for their own protocol. **A namespace is used
+to differentiate between protocols, this number should be arbitrary enough to not cause overlap**.
 
+<!--
 This repository contains the [multiprotocol definition](./multiprotocol.csv) used by [vac](https://vac.dev), 
 the [go implementation](https://github.com/vacp2p/go-multiprotocol) however is generic and therefore anyone can implement their own table.
+-->
 
-The table is represented using the following CSV format:
+## Protocol Definitions
 
-```csv
-code, size, name, comment
-1,    0,    vac,  namespace
-2,    V,    waku,
-```
+Protocol values are defined using a csv table, current implementations support this standard. 
+The CSV file MUST contain a header of the fields defined, these are `code`, `size`, `name` and `comment`.
+Their values should be as follows:
 
 | field       | description                                                                                                                     |
 | :---------: | :------------------------------------------------------------------------------------------------------------------------------ |
@@ -28,15 +30,40 @@ code, size, name, comment
 | **name**    | The human readable name of the field.                                                                                           |
 | **comment** | Any developer related comments for the field.                                                                                   |
 
-**Namespaces should be generic to not cause overlap, vac uses `42`**
+Below is an example valid csv table, the values in it will be used further in the examples within this document.
 
-Human-readable:
-
+```csv
+code, size, name, comment
+42,   0,    vac,  namespace
+2,    V,    waku,
+3,    V,    store,
+4,    V,    relay, 
 ```
+
+## Specification
+
+A multiprotocol, like a multiaddr is a recursive (TLV)+ (type-length-value repeating) encoding. It has two forms:
+  - a human-readable version to be used when printing to the user (UTF-8)
+  - a binary-packed version to be used in storage, transmissions on the wire, and as a primitive in other formats.
+  
+### Human-readable
+
+Below is a psuedo regex of the encoding itself.
+
+```regexp
 /<namespace>/<protocol>/<version>(/<capability>/<version>|<capability>)+
 ```
 
-Examples:
+ - `namespace` - the namespace represents the protocol namespace. In our case this would be `vac`.
+ - `protocol` - the protocol represents the specific protocol we are identifying, in our case `waku`.
+ - `version` - the version represents the global protocol version, this can be any integer.
+
+Next we have our repeating fields:
+ - `capability` - this represents a specific supported capability, for example `store` or `relay`.
+ - `version` - this field is not required, if the `size` for a specific capability is `0`, it represents the supported version,
+ this can either be latest or earliest, we leave this to implementers to decide.
+
+Now, let's look at some human-readable examples:
 
 ```
 /vac/waku/2
@@ -44,7 +71,9 @@ Examples:
 /vac/waku/2/store/1
 ```
 
-Machine-readable:
+### Machine-readable
+
+@TODO
 
 ```
 <namespace uvarint><protocol uvarint><version uvarint>(<protoCode uvarint><value []byte>)+
@@ -64,3 +93,5 @@ With multiaddr:
 ```
 /ip4/127.0.0.1/tcp/9000/vac/waku/0.2/relay/0.2
 ```
+## Implementations
+ - [go-multiprotocol](https://github.com/vacp2p/go-multiprotocol)
