@@ -21,7 +21,7 @@ the [go implementation](https://github.com/vacp2p/go-multiprotocol) however is g
 
 Protocol values are defined using a csv table, current implementations support this standard. 
 The CSV file MUST contain a header of the fields defined, these are `code`, `size`, `name` and `comment`.
-Their values should be as follows:
+Their values MUST be as follows:
 
 | field       | description                                                                                                                     |
 | :---------: | :------------------------------------------------------------------------------------------------------------------------------ |
