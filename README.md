@@ -1,5 +1,7 @@
 # multiprotocol: Domain Specific Protocol Extensions for Multiaddr
 
+@TODO MOVE TABLE TO VAC SPECIFIC REPO
+
 **:warning: THIS IS STILL AN EARLY DRAFT :warning:**
 
 > Multiformat inspired self-describing protocol identifiers
