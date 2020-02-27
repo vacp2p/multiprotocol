@@ -1,0 +1,5 @@
+code, size, name, comment
+42,   0,    vac,  namespace
+2,    V,    waku,
+3,    V,    store, a node will store messages.
+4,    V,    relay, a node will relay messages.
