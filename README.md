@@ -96,4 +96,10 @@ With multiaddr:
 /ip4/127.0.0.1/tcp/9000/vac/waku/0.2/relay/0.2
 ```
 ## Implementations
+
  - [go-multiprotocol](https://github.com/vacp2p/go-multiprotocol)
+ 
+## Credits
+
+This protocol was inspired by [@oskarth](https://github.com/oskarth) and based on the work of [multiformats](https://github.com/multiformats).
+Its current form was conceived by [decanus](https://github.com/decanus).
