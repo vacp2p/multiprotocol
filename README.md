@@ -60,6 +60,7 @@ Below is a psuedo regex of the encoding itself.
  - `version` - the version represents the global protocol version, this can be any integer.
 
 Next we have our repeating fields:
+
  - `capability` - this represents a specific supported capability, for example `store` or `relay`.
  - `version` - this field is not required, if the `size` for a specific capability is `0`, it represents the supported version,
  this can either be latest or earliest, we leave this to implementers to decide.
