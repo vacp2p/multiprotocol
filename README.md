@@ -1,8 +1,6 @@
-# multiprotocol: Domain Specific Protocol Extensions for Multiaddr
+# multiprotocol: Multiformat inspired self-describing protocol identifiers
 
 **:warning: THIS IS STILL AN EARLY DRAFT :warning:**
-
-> Multiformat inspired self-describing protocol identifiers
 
 In this specification we describe a simple method for nodes to advertise their capabilities. 
 The protocol is heavily inspired by [multiformats](https://multiformats.io/) and provides both a human and machine readable representation.
