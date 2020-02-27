@@ -1,4 +1,4 @@
-# multiprotocol: Multiformat inspired self-describing protocol identifiers
+# multiprotocol: multiformat inspired self-describing protocol identifiers
 
 **:warning: THIS IS STILL AN EARLY DRAFT :warning:**
 
