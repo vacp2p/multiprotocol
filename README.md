@@ -1,10 +1,8 @@
-# multiprotocol: Domain Specific Protocol Extensions for Multiaddr
+# multiprotocol: multiformat inspired self-describing protocol identifiers
 
 @TODO MOVE TABLE TO VAC SPECIFIC REPO
 
 **:warning: THIS IS STILL AN EARLY DRAFT :warning:**
-
-> Multiformat inspired self-describing protocol identifiers
 
 In this specification we describe a simple method for nodes to advertise their capabilities. 
 The protocol is heavily inspired by [multiformats](https://multiformats.io/) and provides both a human and machine readable representation.
@@ -24,7 +22,7 @@ code, size, name, comment
 ```
 
 | field       | description                                                                                                                     |
-| ----------- | ------------------------------------------------------------------------------------------------------------------------------- |
+| :---------: | :------------------------------------------------------------------------------------------------------------------------------ |
 | **code**    | This field contains the code identifying the key.                                                                               |
 | **size**    | This field identifies the expected keys size, it can be any number or `V`, indicating that the value itself is length prefixed. |
 | **name**    | The human readable name of the field.                                                                                           |
@@ -54,8 +52,10 @@ Machine-readable:
 
 Examples:
 
-```
-0x42 0x2 0x2 0x0 0x2
+```python
+0x2a 0x2 0x1 0x32 # /vac/waku/2
+0x2a 0x2 0x1 0x32 0x4 0x1 0x32 # /vac/waku/2/relay/2
+0x2a 0x2 0x1 0x32 0x3 0x1 0x32 # /vac/waku/2/store/1
 ```
 
 
