@@ -30,6 +30,11 @@ Their values MUST be as follows:
 | **name**    | The human readable name of the field.                                                                                           |
 | **comment** | Any developer related comments for the field.                                                                                   |
 
+The valid `size` values are:
+ - `0` - there is no value.
+ - `V` - meaning the value is length prefixed.
+ - `>0` - any number above 0 is the explicit length of the field.
+
 Below is an example valid csv table, the values in it will be used further in the examples within this document.
 
 ```csv
