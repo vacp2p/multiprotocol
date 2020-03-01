@@ -80,11 +80,13 @@ Now, let's look at some human-readable examples:
 
 ### Machine-readable
 
-@TODO
+Below is a psuedo regex of the binary-packed encoding itself.
 
+```regexp
+<namespace uvarint><protocol uvarint><version uvarint>(<protoCode uvarint><version uvarint>|<protoCode uvarint>)+
 ```
-<namespace uvarint><protocol uvarint><version uvarint>(<protoCode uvarint><value []byte>)+
-```
+
+@TODO
 
 Examples:
 
@@ -100,6 +102,7 @@ With multiaddr:
 ```
 /ip4/127.0.0.1/tcp/9000/vac/waku/0.2/relay/0.2
 ```
+
 ## Implementations
 
  - [go-multiprotocol](https://github.com/vacp2p/go-multiprotocol)
