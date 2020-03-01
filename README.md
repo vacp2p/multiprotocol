@@ -96,8 +96,9 @@ Examples:
 0x2a 0x2 0x1 0x32 0x3 0x1 0x32 # /vac/waku/2/store/1
 ```
 
+### Interaction with Multiaddr
 
-With multiaddr:
+@TODO
 
 ```
 /ip4/127.0.0.1/tcp/9000/vac/waku/0.2/relay/0.2
