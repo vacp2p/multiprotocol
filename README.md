@@ -17,6 +17,14 @@ This repository contains the [multiprotocol definition](./multiprotocol.csv) use
 the [go implementation](https://github.com/vacp2p/go-multiprotocol) however is generic and therefore anyone can implement their own table.
 -->
 
+## Motivation
+
+The reason for creating this, is to provide more granular node information than that provided by [multiaddr](https://github.com/multiformats/multiaddr).
+Multiaddr only provides us with connectivity information however it does not tell us what protocol level services
+a node may provide. For example in the case of [waku](https://specs.vac.dev/specs/waku/waku.html), we would like to 
+know if a node is a mailserver or if a node relays messages. This allows clients to make more informed decisions on
+which nodes to connect to.
+
 ## Protocol Definitions
 
 Protocol values are defined using a csv table, current implementations support this standard. 
