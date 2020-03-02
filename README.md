@@ -113,3 +113,7 @@ Examples:
 
 This protocol was inspired by [@oskarth](https://github.com/oskarth) and based on the work of [multiformats](https://github.com/multiformats).
 Its current form was conceived by [decanus](https://github.com/decanus).
+
+## License
+
+This repository is only for documents. All of these are licensed under the [CC-BY-SA 3.0](https://ipfs.io/ipfs/QmVreNvKsQmQZ83T86cWSjPu2vR3yZHGPm5jnxFuunEB9u) license, © 2020 vacp2p. Any code is under a [MIT](LICENSE) © 2020 vacp2p.
