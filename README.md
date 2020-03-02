@@ -86,7 +86,8 @@ Below is a psuedo regex of the binary-packed encoding itself.
 <namespace uvarint><protocol uvarint><version uvarint>(<protoCode uvarint><version uvarint>|<protoCode uvarint>)+
 ```
 
-@TODO
+The binary encoding looks similar to the human-readable one, the only difference here is that we use variable integers.
+These are configured like the strings using the protocol definitions table.
 
 Examples:
 
